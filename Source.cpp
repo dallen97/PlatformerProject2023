@@ -15,7 +15,7 @@ using std::cout;
 using std::endl;
 using namespace sf; //used to not have to type sf:: in front of multiple lines
 
-// following class/functions will be moved to the bottom later on, unsure if classes can be prototyped like functions
+// following class/functions will be moved to a header file later on, currently here for ease of access.
 
 class Platform_Class{
 public:
