@@ -10,6 +10,7 @@ void Entity::draw(sf::RenderTarget& target, sf::RenderStates states) const{
 };
 
 void Entity::Set_Texture(const char* Tex) {
+	//loads texture file
 	Texture.loadFromFile(Tex);
 }
 
@@ -33,7 +34,7 @@ Player::Player(float X,float Y,float W,float H) {
 
 void Player::Update(bool &D, bool &A, bool &W, bool &S, float &Time) {
 	
-
+	//controls player movement speed
 	if (W) {
 		Velocity.y = -1.f;
 	}
@@ -56,7 +57,7 @@ void Player::Update(bool &D, bool &A, bool &W, bool &S, float &Time) {
 	X += Velocity.x * Speed * Time;
 	Y += Velocity.y * Speed * Time;
 
-	setPosition(X, Y);
+	setPosition(X, Y); //player position control
 }
 
 void Platform::Initialize(float X, float Y, float W, float H) {
@@ -73,5 +74,5 @@ void Platform::Initialize(float X, float Y, float W, float H) {
 	Vertices[2].texCoords = sf::Vector2f(W, H);
 	Vertices[3].texCoords = sf::Vector2f(0, H);
 
-	setPosition(X, Y);
+	setPosition(X, Y);	//platform position
 };

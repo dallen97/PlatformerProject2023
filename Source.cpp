@@ -22,7 +22,7 @@ int main()
 	bool Player_Up, Player_Down, Player_Left, Player_Right = false; // setting these values as false so the player is still when not moving
 
 
-	int Level_Array[10][10] = { {0,0,0,0,0,0,0,0,0,0},
+	int Level_Array[10][10] = { {0,0,0,0,0,0,0,0,0,0},				//sets locations for the platforms to sppawn
 							  {0,0,0,0,0,0,1,1,0,0},
 							  {0,0,0,0,0,0,0,0,0,0},
 							  {0,0,0,0,0,0,0,0,0,0},
@@ -38,7 +38,7 @@ int main()
 
 	int Level_Size = 0;
 
-	for (int i = 0; i < 10; i++) {
+	for (int i = 0; i < 10; i++) {									//loops to create platforms and load texture to them
 		for (int j = 0; j < 10; j++) {
 			if (Level_Array[i][j] == 1) {
 				level[Level_Size].Initialize(j*45, i*45,15,15);
@@ -48,10 +48,10 @@ int main()
 		}
 	}
 
-	Player player(-200, 100 ,50, 50);
-	player.Set_Texture("data/images/slime.png");
+	Player player(-200, 100 ,50, 50);								//player position
+	player.Set_Texture("data/images/slime.png");					//player texture loading
 	View view(Vector2f(0.0f, 0.0f), Vector2f(Window_Width,Window_Height));
-	view.zoom(10);
+	view.zoom(10);													//controls camera zoom
 	Clock gameClock;
 
 	while (app.isOpen())
@@ -68,12 +68,10 @@ int main()
 		Player_Left = Keyboard::isKeyPressed(Keyboard::A);
 		Player_Up = Keyboard::isKeyPressed(Keyboard::W);
 		Player_Down = Keyboard::isKeyPressed(Keyboard::S);
-
-
 		float Game_Time = gameClock.getElapsedTime().asSeconds();
 
 
-		player.Update(Player_Left, Player_Right, Player_Up, Player_Down, Game_Time);
+		player.Update(Player_Left, Player_Right, Player_Up, Player_Down, Game_Time);	//player position function
 		view.setCenter(player.X + player.W/2.f, player.Y + player.H/2.f); // sets the center of the screen on the player's character
 		gameClock.restart().asSeconds();
 

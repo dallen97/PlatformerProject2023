@@ -3,9 +3,9 @@
 #include <iostream>
 class Entity : public sf::Drawable, public sf::Transformable {
 private:
-	
-public:
 	void draw(sf::RenderTarget& target, sf::RenderStates states) const;
+public:
+	
 	sf::VertexArray Vertices;
 	sf::Texture Texture;
 	sf::Vector2f Velocity;
@@ -23,7 +23,7 @@ public:
 
 class Platform : public Entity {
 private:
-	
+
 public:
 	void Initialize(float X, float Y, float W, float H);
 };
