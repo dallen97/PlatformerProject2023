@@ -14,3 +14,6 @@ This project was chosen as I took interest in platoforming games and thought it 
 
 # List of maintainers
 Maintained by: dallen97
+
+# Current Issues
+After cleaning up code, adding cpp/hpp files and altering the existing code to be more readable. Sprites are not loading, using std::cout to see if values are changing does verify that the entities exist although no textures are loading for some reason. No error messages for this, still troubleshooting as of 5/1/2023
